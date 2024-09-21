@@ -19,6 +19,11 @@
     border-radius: 50%;
 }
 
+.main .nav p{
+    font-weight: 500;
+    font-size: 23px;
+}
+
 .main-container{
     max-width: 900px;
     margin: auto;
