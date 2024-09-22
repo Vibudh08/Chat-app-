@@ -1,7 +1,7 @@
 .main{
     flex: 1;
     min-height: 100vh;
-    padding-bottom: 15vh;
+    /* padding-bottom: 10vh; */
     position: relative;
 }
 
@@ -25,16 +25,17 @@
 }
 
 .main-container{
-    max-width: 900px;
+    max-width: 970px;
     margin: auto;
 }
 
 .main .greet{
     margin: 50px 0px;
-    font-size: 56px;
+    font-size: 65px;
     color: #c4c7c5;
     font-weight: 500;
     padding: 20px;
+    margin-left: 40px;
 }
 
 .main .greet span{
@@ -48,6 +49,7 @@
     grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
     gap: 15px;
     padding: 20px;
+    margin-left: 40px;
 }
 
 .main .card{
@@ -82,9 +84,10 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    max-width: 900px;
+    max-width: 970px;
     padding: 0px 20px;
-    margin: auto;
+    margin: 0px 30px;
+    
 }
 
 .search-box{
@@ -96,6 +99,9 @@
     padding: 10px 20px;
     border-radius: 50px;
     margin-left: 12px;
+    margin-right: 45px;
+    padding-top: 10px;
+    
 }
 
 .search-box img{
@@ -108,7 +114,7 @@
     background: transparent;
     border: none;
     outline: none;
-    padding: 8px;
+    padding: 9px;
     font-size: 18px;
 }
 
@@ -120,14 +126,14 @@
 
 .main .bottom-info{
     font-size: 13px;
-    margin: 15px auto;
+    margin: 11px auto;
     text-align: center;
     font-weight: 300px;
 }
 
 .result{
     /* padding: 0px 5%; */
-    max-height: 75vh;
+    max-height: 81vh;
     overflow-y: scroll;
 }
 
@@ -151,6 +157,8 @@
     background-color:  #f0f4f9;
     border-radius: 50px;
     color: rgb(93, 93, 93);
+    font-weight: 400;
+    margin-right: 45px;
 }
  
 .result-data{
@@ -172,8 +180,10 @@
 .result-data p{
     font-size: 20px;
     /* margin-left: 16px; */
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5;
+    /* max-width: 1000px; */
+    margin-right: 45px;
 }
 
 .loader{
@@ -182,6 +192,7 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 0px;
+    margin-right: 45px;
 }
 
 .loader hr{

@@ -5,6 +5,10 @@ import { context } from "../../context/Context";
 
 const Main = () => {
 
+  const value = (id)=>{
+    let paragraphText = document.getElementById(id).textContent;
+    onSent(paragraphText)
+  }
   const {onSent,recentPrompt,showResult,loading,resultData,input,setInput} = useContext(context)
   return (
     <div className="main">
@@ -20,13 +24,15 @@ const Main = () => {
             </div>
             <div className="result-data">
               <img src={assets.ai_icon} alt="" />
-              {
-                loading ?
+              {loading ? (
                 <div className="loader">
-                <hr /><hr /><hr />
-                </div> : 
-                <p dangerouslySetInnerHTML={{__html:resultData}}></p>
-              }
+                  <hr />
+                  <hr />
+                  <hr />
+                </div>
+              ) : (
+                <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+              )}
             </div>
           </div>
         ) : (
@@ -39,20 +45,22 @@ const Main = () => {
             </div>
 
             <div className="cards">
-              <div className="card">
-                <p>Suggest beautiful places to see on an upcoming road trip</p>
+              <div onClick={() => value("1")} className="card">
+                <p id="1">
+                  Suggest beautiful places to see on an upcoming road trip
+                </p>
                 <img src={assets.compass_icon} alt="" />
               </div>
-              <div className="card">
-                <p>Briefly summarize this concept: urban planning</p>
+              <div onClick={() => value("2")} className="card">
+                <p id="2">Briefly summarize this concept: urban planning</p>
                 <img src={assets.bulb_icon} alt="" />
               </div>
-              <div className="card">
-                <p>Brainstorm team bonding activities for our work retreat</p>
+              <div onClick={() => value("3")} className="card">
+                <p id="3">Brainstorm team bonding activities for our work retreat</p>
                 <img src={assets.message_icon} alt="" />
               </div>
-              <div className="card">
-                <p>Improve the readability of the following code</p>
+              <div onClick={() => value("4")} className="card">
+                <p id="4">Improve the readability of the following code</p>
                 <img src={assets.code_icon} alt="" />
               </div>
             </div>
@@ -75,7 +83,7 @@ const Main = () => {
           </div>
 
           <p className="bottom-info">
-            Don't trust Google AI with important information. Just Google it.
+            Don't trust Google AI with important information. Instead Google it.
           </p>
         </div>
       </div>
