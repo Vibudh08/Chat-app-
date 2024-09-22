@@ -22,6 +22,8 @@
 .main .nav p{
     font-weight: 500;
     font-size: 23px;
+    margin-left: 60px;
+    /* position: sticky; */
 }
 
 .main-container{
@@ -152,7 +154,7 @@
 
 .result-title p{
     font-size: 20px;
-    max-width: 600px;
+    max-width: 60%;
     padding: 10px 18px;
     background-color:  #f0f4f9;
     border-radius: 50px;
@@ -206,6 +208,21 @@
     animation: loader 3s infinite linear;
 }
 
+.nav .menu  img{
+    width: 20px;
+}
+
+.nav .menu1{
+    width: 20px;
+    z-index: 1000;
+    position: fixed;
+    left: 0px;
+    display: block;
+    float: left;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 @keyframes loader {
     0%{
         background-position: -800px 0px;
@@ -215,3 +232,61 @@
     }
 }
 
+@media (max-width:1000px) {
+    .main .greet{
+        margin: 50px 0px;
+        font-size: 40px;
+        font-weight: 500;
+        padding: 20px;
+        margin-left: 40px;
+        margin-bottom: 0px;
+    }
+
+    .main .cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 0fr));
+        /* gap: 15px;
+        padding: 15px;
+        margin-left: 40px; */
+    }
+
+    /* .main .card{
+        height: 180px;
+    } */
+}
+
+@media (max-width:1000px) {
+    #abc{
+        display: none;
+    }
+    #bcd{
+        display: none;
+    }
+    .main .greet{
+        margin-bottom: 20px;
+    }
+} 
+
+@media (max-width:500px) {
+   .main .cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 0fr));
+}
+}
+
+
+@media (max-width:600px) {
+    .main-bottom input{
+        flex: none;
+        width: 150px;
+    }
+    .main-bottom img{
+        width: 20px;
+    }
+    .search-box{
+        padding: 5px 10px;
+    }
+    .search-box div{
+        gap: 5px;
+    }
+}

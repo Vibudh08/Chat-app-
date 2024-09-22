@@ -1,31 +1,48 @@
-import './sidebar.css'
-import {assets} from '../../assets/assets'
-import { useContext, useState } from 'react';
-import { context } from '../../context/Context';
+import "./sidebar.css";
+import { assets } from "../../assets/assets";
+import { useContext, useEffect } from "react";
+import { context } from "../../context/Context";
+
 
 const Sidebar = () => {
+  const {
+    onSent,
+    prevPrompts,
+    setRecentPrompt,
+    newChat,
+    isOpen,
+    setIsOpen
+  } = useContext(context);
 
-    const [extended, setExtended] = useState(true)
-    const {onSent, prevPrompts, setRecentPrompt,newChat} = useContext(context)
-
-    const loadPrompt= async (prompt)=>{
-      setRecentPrompt(prompt)
-      await onSent(prompt)
+  const handleSidebarClick = () => {
+    if (window.innerWidth < 600) {
+      setIsOpen(true);
     }
+  };
+
+  const loadPrompt = async (prompt) => {
+    setRecentPrompt(prompt);
+    await onSent(prompt);
+  };
   return (
-    <div className="sidebar">
-      <div className="top">
-        <img
+    <>
+      {/* {extended ? ( */}
+      <div
+        className={`sidebar ${isOpen ? "open" : "closed"}`}
+        onClick={handleSidebarClick}
+      >
+        <div className="top">
+          {/* <img
           className="menu"
           src={assets.menu_icon}
           alt=""
           onClick={() => setExtended((prev) => (prev === true ? false : true))}
-        />
-        <div className="new-chat">
-          <img src={assets.plus_icon} alt="" />
-          {extended ? <p onClick={() => newChat()}>New Chat</p> : null}
-        </div>
-        {extended ? (
+        /> */}
+          <div onClick={() => newChat()} className="new-chat">
+            <img src={assets.plus_icon} alt="" />
+            <p>New Chat</p>
+          </div>
+
           <div className="recent">
             <p className="recent-title">Recent</p>
             {prevPrompts.map((item, index) => {
@@ -37,23 +54,26 @@ const Sidebar = () => {
               );
             })}
           </div>
-        ) : null}
+        </div>
+        <div className="bottom">
+          <div className="bottom-item recent-entry">
+            <img src={assets.question_icon} alt="" />
+            <p>Help</p>
+          </div>
+          <div className="bottom-item recent-entry">
+            <img src={assets.history_icon} alt="" />
+            <p>Activity</p>
+          </div>
+          <div className="bottom-item recent-entry">
+            <img src={assets.setting_icon} alt="" />
+            <p>Setting</p>
+          </div>
+        </div>
       </div>
-      <div className="bottom">
-        <div className="bottom-item recent-entry">
-          <img src={assets.question_icon} alt="" />
-          {extended ? <p>Help</p> : null}
-        </div>
-        <div className="bottom-item recent-entry">
-          <img src={assets.history_icon} alt="" />
-          {extended ? <p>Activity</p> : null}
-        </div>
-        <div className="bottom-item recent-entry">
-          <img src={assets.setting_icon} alt="" />
-          {extended ? <p>Setting</p> : null}
-        </div>
-      </div>
-    </div>
+      {/* ) : (
+        ""
+      )} */}
+    </>
   );
-}
-export default Sidebar
+};
+export default Sidebar;

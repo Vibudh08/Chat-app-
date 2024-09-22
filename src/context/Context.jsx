@@ -11,6 +11,8 @@ const ContextProvider = (props)=>{
     const [showResult, setShowResult] = useState(false);
     const [loading,setLoading] = useState(false)
     const [resultData,setResultData] = useState("")
+    const [isOpen, setIsOpen] = useState(true);
+
 
     const delayPara = (index,nextword)=>{
         setTimeout(function(){
@@ -69,7 +71,9 @@ const ContextProvider = (props)=>{
         resultData,
         input,
         setInput,
-        newChat
+        newChat,
+        isOpen,
+        setIsOpen
     }
     return(
         <context.Provider value={contextValue}>

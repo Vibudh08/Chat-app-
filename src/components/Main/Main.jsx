@@ -9,10 +9,16 @@ const Main = () => {
     let paragraphText = document.getElementById(id).textContent;
     onSent(paragraphText)
   }
-  const {onSent,recentPrompt,showResult,loading,resultData,input,setInput} = useContext(context)
+  const {onSent,recentPrompt,showResult,loading,resultData,input,setInput,setIsOpen} = useContext(context)
   return (
     <div className="main">
       <div className="nav">
+        <img
+          className="menu1"
+          src={assets.menu_icon}
+          alt=""
+          onClick={() => setIsOpen((prev) => (prev === true ? false : true))}
+        />
         <p>AI Chat</p>
         <img src={assets.vib} alt="" />
       </div>
@@ -45,22 +51,24 @@ const Main = () => {
             </div>
 
             <div className="cards">
-              <div onClick={() => value("1")} className="card">
-                <p id="1">
+              <div onClick={() => value("aa")} className="card">
+                <p id="aa">
                   Suggest beautiful places to see on an upcoming road trip
                 </p>
                 <img src={assets.compass_icon} alt="" />
               </div>
-              <div onClick={() => value("2")} className="card">
-                <p id="2">Briefly summarize this concept: urban planning</p>
+              <div onClick={() => value("bb")} className="card">
+                <p id="bb">Briefly summarize this concept: urban planning</p>
                 <img src={assets.bulb_icon} alt="" />
               </div>
-              <div onClick={() => value("3")} className="card">
-                <p id="3">Brainstorm team bonding activities for our work retreat</p>
+              <div onClick={() => value("cc")} className="card" id="abc">
+                <p id="cc">
+                  Brainstorm team bonding activities for our work retreat
+                </p>
                 <img src={assets.message_icon} alt="" />
               </div>
-              <div onClick={() => value("4")} className="card">
-                <p id="4">Improve the readability of the following code</p>
+              <div onClick={() => value("dd")} className="card" id="bcd">
+                <p id="dd">Improve the readability of the following code</p>
                 <img src={assets.code_icon} alt="" />
               </div>
             </div>
