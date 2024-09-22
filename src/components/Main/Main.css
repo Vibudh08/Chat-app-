@@ -271,7 +271,11 @@
    .main .cards{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(130px, 0fr));
-}
+    }
+    .search-box{
+        margin-left: 0px;
+        margin-right: 35px;
+    }
 }
 
 
