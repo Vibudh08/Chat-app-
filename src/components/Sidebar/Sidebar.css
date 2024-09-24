@@ -12,7 +12,6 @@
   display: none;
 }
 
-/* Sidebar appears as an overlay when opened */
 .sidebar.open {
   display: block;
 }
@@ -58,7 +57,6 @@
     align-items: start;
     gap: 10px;
     padding: 10px;
-    /* padding-right: 20px; */
     border-radius: 50px;
     color: #282828;
     cursor: pointer;
@@ -85,7 +83,6 @@
    .sidebar.closed {
         display: block;
         position: fixed; 
-        /* min-height: 105vh; */
         display: inline-flex;
         flex-direction: column;
         justify-content: space-between;
@@ -95,7 +92,6 @@
         transition: all 0.3s ease;
   }
 
-  /* Sidebar in open state will appear as an overlay */
   .sidebar.open {
     display: none;
   }

@@ -1,7 +1,6 @@
 .main{
     flex: 1;
     min-height: 100vh;
-    /* padding-bottom: 10vh; */
     position: relative;
 }
 
@@ -23,7 +22,6 @@
     font-weight: 500;
     font-size: 23px;
     margin-left: 60px;
-    /* position: sticky; */
 }
 
 .main-container{
@@ -134,7 +132,6 @@
 }
 
 .result{
-    /* padding: 0px 5%; */
     max-height: 81vh;
     overflow-y: scroll;
 }
@@ -148,7 +145,6 @@
     word-break: break-all;
     justify-content: flex-end;
     margin: 40px 0;
-    /* align-items: center; */
     gap: 20px;
 }
 
@@ -170,10 +166,6 @@
 }
 
 .result-data img{
-    /* height: 70px;
-    width: 70px;
-    float: left; */
-    /* margin-left: -61px; */
     margin-top: -20px; 
     width: 70px;
     border-radius: 50%;
@@ -181,10 +173,8 @@
 
 .result-data p{
     font-size: 20px;
-    /* margin-left: 16px; */
     font-weight: 400;
     line-height: 1.5;
-    /* max-width: 1000px; */
     margin-right: 45px;
 }
 
@@ -245,17 +235,8 @@
     .main .cards{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 0fr));
-        /* gap: 15px;
-        padding: 15px;
-        margin-left: 40px; */
     }
 
-    /* .main .card{
-        height: 180px;
-    } */
-}
-
-@media (max-width:1000px) {
     #abc{
         display: none;
     }
@@ -274,6 +255,10 @@
     }
     .search-box{
         margin-left: 0px;
+        margin-right: 35px;
+    }
+    
+    .main .bottom-info{
         margin-right: 35px;
     }
 }

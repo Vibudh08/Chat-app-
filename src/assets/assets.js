@@ -15,6 +15,7 @@ import send_icon from './send_icon.png'
 import gemini_icon from './gemini_icon.png'
 import ai_icon from './ai_icon.png'
 import vib from './vib.png'
+import logo from './logo.png'
 
 export const assets = {
     history_icon,
@@ -33,5 +34,6 @@ export const assets = {
     send_icon,
     gemini_icon,
     ai_icon,
-    vib
+    vib,
+    logo
 }
