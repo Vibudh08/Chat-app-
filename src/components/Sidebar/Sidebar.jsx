@@ -26,18 +26,11 @@ const Sidebar = () => {
   };
   return (
     <>
-      {/* {extended ? ( */}
       <div
         className={`sidebar ${isOpen ? "open" : "closed"}`}
         onClick={handleSidebarClick}
       >
         <div className="top">
-          {/* <img
-          className="menu"
-          src={assets.menu_icon}
-          alt=""
-          onClick={() => setExtended((prev) => (prev === true ? false : true))}
-        /> */}
           <div onClick={() => newChat()} className="new-chat">
             <img src={assets.plus_icon} alt="" />
             <p>New Chat</p>
@@ -70,9 +63,6 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      {/* ) : (
-        ""
-      )} */}
     </>
   );
 };
